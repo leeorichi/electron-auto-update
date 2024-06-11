@@ -1,12 +1,13 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.9",
+  "version": "0.8.11",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Long",
+  "author": "Long <longhv2206@gmail.com>",
+  "email": "longhv2206@gmail.com",
   "scripts": {
     "start": "electron .",
-    "publish": "electron-builder -p always",
+    "publish": "electron-builder -mwl --x64 -p always",
     "p1": "electron-builder --mac",
     "p2": "electron-builder -w --x64"
   },
