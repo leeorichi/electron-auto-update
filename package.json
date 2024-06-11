@@ -1,15 +1,18 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.1",
+  "version": "0.8.5",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "author": "Long",
   "scripts": {
-    "publish": "electron-builder -p always"
+    "start": "electron .",
+    "publish": "electron-builder -p always",
+    "p1": "electron-builder --mac",
+    "p2": "electron-builder -w"
   },
   "devDependencies": {
     "electron": "^14.0.1",
-    "electron-builder": "^22.11.7",
+    "electron-builder": "^23.6.0",
     "electron-notarize": "^1.1.1"
   },
   "dependencies": {
@@ -17,20 +20,39 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
-    "afterSign": "./build/notarize.js",
+    "appId": "com.github.leeorichi.electronupdaterexample",
     "mac": {
       "category": "your.app.category.type"
     },
     "win": {
-      "target": "nsis"
+      "target": [
+        "nsis"
+      ],
+      "icon": "./icons/logo.ico",
+      "publisherName": [
+        "company-name SRL",
+        "company-name srl",
+        "company-name srl"
+      ],
+      "verifyUpdateCodeSignature": false
     },
     "nsis": {
-      "oneClick": false
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": "always"
     },
     "linux": {
       "category": "your.app.category.type",
       "target": "AppImage"
-    }
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "leeorichi",
+        "repo": "electron-auto-update"
+      }
+    ]
   }
 }
