@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Long",
@@ -8,7 +8,7 @@
     "start": "electron .",
     "publish": "electron-builder -p always",
     "p1": "electron-builder --mac",
-    "p2": "electron-builder -w"
+    "p2": "electron-builder -w --x64"
   },
   "devDependencies": {
     "electron": "^14.0.1",
