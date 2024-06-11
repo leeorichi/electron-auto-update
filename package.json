@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.6",
+  "version": "0.8.9",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Long",
@@ -40,12 +40,14 @@
       "oneClick": false,
       "perMachine": true,
       "allowElevation": true,
-      "deleteAppDataOnUninstall": true,
-      "createDesktopShortcut": "always"
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName" : "S3 Salon Earse"
     },
     "linux": {
       "category": "your.app.category.type",
-      "target": "AppImage"
+      "target": "deb"
     },
     "publish": [
       {
